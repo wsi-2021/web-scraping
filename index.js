@@ -10,12 +10,20 @@ console.log("There are", $('.coursetitle').length, "ITMD courses. And here they 
 
 $('.courseblock').each(function() {
   var course = {};
+  var hours;
   course['code'] = $(this).find('.coursecode').text();
   course['title'] = $(this).find('.coursetitle').text();
   course['description'] = $(this).find('.courseblockdesc')
     .text()
     .replace(/\n/gm, "") // remove newlines
     .replace(/\s\s/gm, " "); // remove double spaces
+  hours = $(this).find('.hours')
+    .text()
+    .toLowerCase()
+    .replace(/\n/gm, '')
+    .replace(/(\d)(?!$)/gm, '$1,')
+    .replace(/([a-z]+)/gm, '"$1"');
+  course['hours'] = JSON.parse(`{${hours}}`);
   courses.push(course);
   //console.log($(this).text());
 });
