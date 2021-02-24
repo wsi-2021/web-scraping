@@ -39,3 +39,21 @@ console.log(courses);
 // $('.courseblockdesc').text().replace(/\n/gm, "");
 
 fs.writeFileSync('data/itmd.json', JSON.stringify(courses));
+
+
+/*
+  Handling prerequisites:
+
+  (ITM 311 or CS 116 or CS 201) and (ITM 312 or ITM 313 or CS 331)
+
+  var prereqs = [
+    ['ITM 311', 'CS 116', 'CS 201'],
+    ['ITM 312', 'ITM 313', 'CS 331']
+  ];
+
+  var prereqs = [
+    ['ITMD 361'],
+    ['ITMD 362']
+  ];
+
+*/
