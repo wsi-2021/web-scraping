@@ -8,9 +8,14 @@ var courses = [];
 
 console.log("There are", $('.coursetitle').length, "ITMD courses. And here they are:");
 
-$('.coursetitle').each(function() {
+$('.courseblock').each(function() {
   var course = {};
-  course['title'] = $(this).text();
+  course['code'] = $(this).find('.coursecode').text();
+  course['title'] = $(this).find('.coursetitle').text();
+  course['description'] = $(this).find('.courseblockdesc')
+    .text()
+    .replace(/\n/gm, "") // remove newlines
+    .replace(/\s\s/gm, " "); // remove double spaces
   courses.push(course);
   //console.log($(this).text());
 });
