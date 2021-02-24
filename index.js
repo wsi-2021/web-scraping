@@ -25,6 +25,8 @@ $('.courseblock').each(function() {
     .replace(/([a-z]+)/gm, '"$1"');
   course['hours'] = JSON.parse(`{${hours}}`);
   if (course['hours'].hasOwnProperty('credit')) {
+    course['hours']['lecture'] = 0;
+    course['hours']['lab'] = 0;
     course['hours']['credits'] = course['hours']['credit'];
     delete course['hours']['credit'];
   };
