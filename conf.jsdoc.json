@@ -4,6 +4,6 @@
   },
   "source": {
     "include": ["./"],
-    "exclude": []
+    "exclude": ["./node_modules/","./docs/"]
   }
 }
