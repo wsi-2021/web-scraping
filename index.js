@@ -20,8 +20,8 @@ console.log("There are", $('.coursetitle').length, "ITMD courses. And here they 
 $('.courseblock').each(function() {
   var course = {};
   var hours;
-  course['code'] = $(this).find('.coursecode').text();
-  course['title'] = $(this).find('.coursetitle').text();
+  course['code'] = extractText($(this),'.coursecode');
+  course['title'] = extractText($(this),'.coursetitle');
   course['description'] = $(this).find('.courseblockdesc')
     .text()
     .replace(/\n/gm, "") // remove newlines
@@ -48,6 +48,20 @@ console.log(courses);
 // $('.courseblockdesc').text().replace(/\n/gm, "");
 
 fs.writeFileSync('data/itmd.json', JSON.stringify(courses));
+
+/*
+  Utility Functions
+*/
+
+/** Extract simple text from the child of a parent element.
+  @function
+  @param {object} element A Cheerio parent element
+  @param {string} selector A CSS selector for a child element
+  @returns {string} The child's text content
+*/
+function extractText(element,selector) {
+  return element.find(selector).text();
+}
 
 
 /*
