@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "docs": "jsdoc -c conf.jsdoc.json ./"
+    "docs": "jsdoc -c conf.jsdoc.json"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.5"
