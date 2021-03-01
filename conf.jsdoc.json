@@ -3,7 +3,7 @@
     "destination": "./docs/"
   },
   "source": {
-    "include": ["./"],
+    "include": ["./","./README.md"],
     "exclude": ["./node_modules/","./docs/"]
   }
 }
