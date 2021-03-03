@@ -21,9 +21,9 @@ console.log("There are", $('.coursetitle').length, "ITMD courses. And here they 
 $('.courseblock').each(function() {
   var course = {};
   var hours;
-  course['code'] = extractText($(this),'.coursecode');
-  course['title'] = extractText($(this),'.coursetitle');
-  course['description'] = $(this).find('.courseblockdesc')
+  course.code = extractText($(this), '.coursecode');
+  course.title = extractText($(this), '.coursetitle');
+  course.description = $(this).find('.courseblockdesc')
     .text()
     .replace(/\n/gm, "") // remove newlines
     .replace(/\s\s/gm, " "); // remove double spaces
@@ -33,15 +33,15 @@ $('.courseblock').each(function() {
     .replace(/\n/gm, '')
     .replace(/(\d)(?!$)/gm, '$1,')
     .replace(/([a-z]+)/gm, '"$1"');
-  course['hours'] = JSON.parse(`{${hours}}`);
-  if (course['hours'].hasOwnProperty('credit')) {
-    course['hours']['lecture'] = 0;
-    course['hours']['lab'] = 0;
-    course['hours']['credits'] = course['hours']['credit'];
-    delete course['hours']['credit'];
-  };
+  course.hours = JSON.parse(`{${ hours }}`);
+  if (course.hours.hasOwnProperty('credit')) {
+    course.hours.lecture = 0;
+    course.hours.lab = 0;
+    course.hours.credits = course.hours.credit;
+    delete course.hours.credit;
+  }
   courses.push(course);
-  //console.log($(this).text());
+  // console.log($(this).text());
 });
 
 console.log(courses);
@@ -60,7 +60,7 @@ fs.writeFileSync('data/itmd.json', JSON.stringify(courses));
   @param {string} selector A CSS selector for a child element
   @returns {string} The child's text content
 */
-function extractText(element,selector) {
+function extractText(element, selector) {
   return element.find(selector).text();
 }
 
