@@ -1,3 +1,4 @@
+'use strict';
 /** Require the NodeJS file utils library.
   @constant
   @type {object}
