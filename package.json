@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "docs": "npx jsdoc -c conf.jsdoc.json"
+    "docs": "npx jsdoc -c conf.jsdoc.json",
+    "linter": "npx eslint -c conf.node.eslint.json ./"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.5",
