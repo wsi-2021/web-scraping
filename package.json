@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.5",
+    "eslint": "^7.21.0",
     "jsdoc": "^3.6.6"
   }
 }
