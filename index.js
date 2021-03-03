@@ -10,6 +10,11 @@ const fs = require('fs');
   @type {object}
 */
 const cheerio = require('cheerio');
+/** Require our own Scraper Utils library.
+  @constant
+  @type {object}
+*/
+const su = require('./lib/scraper-utils');
 
 var raw_html = fs.readFileSync('data/raw/itmd.html');
 var $ = cheerio.load(raw_html);
@@ -21,8 +26,8 @@ console.log("There are", $('.coursetitle').length, "ITMD courses. And here they 
 $('.courseblock').each(function() {
   var course = {};
   var hours;
-  course.code = extractText($(this), '.coursecode');
-  course.title = extractText($(this), '.coursetitle');
+  course.code = su.extractText($(this), '.coursecode');
+  course.title = su.extractText($(this), '.coursetitle');
   course.description = $(this).find('.courseblockdesc')
     .text()
     .replace(/\n/gm, "") // remove newlines
@@ -49,20 +54,6 @@ console.log(courses);
 // $('.courseblockdesc').text().replace(/\n/gm, "");
 
 fs.writeFileSync('data/itmd.json', JSON.stringify(courses));
-
-/*
-  Utility Functions
-*/
-
-/** Extract simple text from the child of a parent element.
-  @function
-  @param {object} element A Cheerio parent element
-  @param {string} selector A CSS selector for a child element
-  @returns {string} The child's text content
-*/
-function extractText(element, selector) {
-  return element.find(selector).text();
-}
 
 
 /*
