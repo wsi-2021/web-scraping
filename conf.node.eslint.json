@@ -49,7 +49,6 @@
     "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
     "arrow-spacing": "warn",
     "no-confusing-arrow": "error",
-    "no-var": "warn",
     "prefer-rest-params": "error",
     "prefer-template": "warn",
     "template-curly-spacing": ["warn", "always"]
