@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "docs": "npx jsdoc -c conf.jsdoc.json",
+    "docs": "npx jsdoc -c conf.jsdoc.json -r ./",
     "linter": "npx eslint -c conf.node.eslint.json ./"
   },
   "dependencies": {
