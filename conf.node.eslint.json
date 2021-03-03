@@ -1,6 +1,6 @@
 {
   "settings": {
-    "_version": "Stolley Node.js Config, v. 3.0.0, 20210303",
+    "_version": "MODIFIED Stolley Node.js Config, v. 3.0.0, 20210303",
     "_eslint_version": "7.21.0",
     "_rules_url": "https://eslint.org/docs/rules/",
     "_repo_url": "https://github.com/karlstolley/eslint-config"
@@ -41,7 +41,7 @@
     "func-call-spacing": "warn",
     "indent": ["warn", 2],
     "linebreak-style": ["error", "unix"],
-    "multiline-comment-style": ["warn", "separate-lines"],
+    "multiline-comment-style": ["warn", "bare-block"],
     "newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 2 }],
     "spaced-comment": ["warn", "always"],
     "semi": ["warn", "always"],
