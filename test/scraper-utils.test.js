@@ -42,6 +42,15 @@ describe('scraper utils', function() {
       );
     });
   });
+  describe('#extractDescription', function() {
+    var expected_description = `This course will cover the creation of Web pages and sites using HTML, CSS, Javascript, jQuery, and graphical applications as well as the client and server architecture of the Internet and related web technologies. The creation and deployment of modern, standards-compliant web pages are addressed. Students create and deploy a Web site with multiple pages and cross-linked structures.`;
+    it('should return the expected course description', function() {
+      assert.equal(
+        su.extractDescription(courseblock, '.courseblockdesc'),
+        expected_description
+      );
+    });
+  });
 
 });
 

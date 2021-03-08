@@ -28,10 +28,8 @@ $('.courseblock').each(function() {
   var hours;
   course.code = su.extractText($(this), '.coursecode');
   course.title = su.extractText($(this), '.coursetitle');
-  course.description = $(this).find('.courseblockdesc')
-    .text()
-    .replace(/\n/gm, "") // remove newlines
-    .replace(/\s\s/gm, " "); // remove double spaces
+  course.description = su.extractDescription($(this), '.courseblockdesc');
+
   hours = $(this).find('.hours')
     .text()
     .toLowerCase()
