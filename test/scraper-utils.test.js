@@ -18,19 +18,20 @@ This course will cover the creation of Web pages and sites using HTML, CSS, Java
 </div>
 </div>`;
 
-var $;
+var courseblock;
 
 const su = require('../lib/scraper-utils');
 
 describe('scraper utils', function() {
 
   beforeEach(function() {
-    $ = cheerio.load(raw_html);
+    var $ = cheerio.load(raw_html);
+    courseblock = $('.courseblock');
   });
   describe('#extractText', function() {
     it('should return the expected course code', function() {
       assert.equal(
-        su.extractText($('.courseblock'), '.coursecode'),
+        su.extractText(courseblock, '.coursecode'),
         'ITMD 361'
       );
     });
