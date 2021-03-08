@@ -35,6 +35,12 @@ describe('scraper utils', function() {
         'ITMD 361'
       );
     });
+    it('should return the expected course title', function() {
+      assert.equal(
+        su.extractText(courseblock, '.coursetitle'),
+        'Fundamentals of Web Development'
+      );
+    });
   });
 
 });
