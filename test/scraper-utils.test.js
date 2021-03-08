@@ -36,3 +36,14 @@ describe('scraper utils', function() {
   });
 
 });
+
+describe('private scraper functions', function() {
+  describe('#normalizeSpace', function() {
+    it('should replace all space characters with a simple space', function() {
+      assert.equal(
+        su.normalizeSpaces('wacky\tspace'),
+        'wacky space'
+      );
+    });
+  })
+});
