@@ -1,5 +1,6 @@
 'use strict';
-/* global describe, it */
+/* global beforeEach, describe, it */
+/* eslint no-irregular-whitespace: ["error", { "skipTemplates": true }]*/
 const assert = require('assert').strict;
 const cheerio = require('cheerio');
 
@@ -45,5 +46,5 @@ describe('private scraper functions', function() {
         'wacky space'
       );
     });
-  })
+  });
 });
