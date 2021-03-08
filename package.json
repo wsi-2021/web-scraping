@@ -1,7 +1,8 @@
 {
   "scripts": {
     "docs": "npx jsdoc -c conf.jsdoc.json -r ./",
-    "linter": "npx eslint -c conf.node.eslint.json ./"
+    "linter": "npx eslint -c conf.node.eslint.json ./",
+    "test": "mocha"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.5",
