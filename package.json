@@ -1,6 +1,6 @@
 {
   "name": "web-scraping",
-  "version": "0.0.0-prerelease",
+  "version": "0.1.0",
   "description": "Scripts to scrape course information from the IIT Bulletin.",
   "main": "index.js",
   "scripts": {
