@@ -1,9 +1,23 @@
 {
+  "name": "web-scraping",
+  "version": "1.0.0",
+  "description": "Scripts to scrape course information from the IIT Bulletin.",
+  "main": "index.js",
   "scripts": {
     "docs": "npx jsdoc -c conf.jsdoc.json -r ./",
     "linter": "npx eslint -c conf.node.eslint.json ./",
     "test": "NODE_ENV=test mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wsi-2021/web-scraping.git"
+  },
+  "author": "Karl Stolley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wsi-2021/web-scraping/issues"
+  },
+  "homepage": "https://github.com/wsi-2021/web-scraping#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.5",
     "eslint": "^7.21.0",
